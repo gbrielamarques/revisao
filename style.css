@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@100;500&display=swap');
 
 header {
     display: flex;
@@ -44,7 +46,96 @@ figure img {
 
 .header-left span {
   	font-family: "Comfortaa", serif;
-    font-size: 32px;
+    font-size: 18px;
   	font-weight: 700;
   	font-style: bold;
+}
+
+.intro {
+    width: 486px;
+    height: 621px;
+    gap: 12px;
+    margin-top: 54px;
+    margin-left: 120px;
+    padding: none;
+}
+
+.intro h1 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76.8px;
+    letter-spacing: 0%;
+    margin-bottom: 32px;
+    margin-top: none;
+}
+
+.intro_paragraph {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0%;
+    color: #828282;
+}
+
+.intro_button {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 8px;
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.intro_contato h1{
+    font-size: 18px;
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-style: normal; 
+}
+
+.intro_contato {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    background-color: #252828;
+    margin-right: 12px;
+    text-align: left;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.intro_linkedin {
+    text-decoration: none;
+    background-color: transparent;
+    border: #252828;
+    padding: 24px 8px;
+    margin-top: 8px;
+    margin-left: 24px;
+    border: 10%;
+    cursor: pointer;
+}
+
+.projects {
+    margin-left: 222px;
+    margin-right: 226px;
+    margin-top: 42px; /* Aumente o valor para garantir mais espaçamento */
+    padding-top: 20px; /* Adiciona padding para dar mais espaço no topo */
+}
+
+.projects h2 {
+    justify-content: center;
+    display: flex;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    letter-spacing: 0%;
+    text-align: center;
+
 }
