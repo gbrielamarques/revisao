@@ -2,6 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@100;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@100;500&display=swap');
 
+
+.root {
+    --color-light-background: #f9faff;
+    --color-light-gray: #ccc;
+}
+
+body {
+    margin: 0;
+    background-color: #f9faff;
+}
+
+figure img {
+    position: absolute; 
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -10,11 +28,15 @@ header {
     height: 56px;
 }
 
-.header-left {
-    color: #252828
+.header-left h1 {
+    font-family: "Comfortaa", serif;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--color-light-title);
+    font-weight: bold;
 }
 
-.header-right button {
+.header-right a {
     margin-left: 24px;
     padding: 6px 12px;
     background-color: transparent;
@@ -24,22 +46,28 @@ header {
     cursor: pointer; /*indica com o mouse quando sobrepasa sobre o textto*/
     font-size: 18px;
     text-decoration: none;
-    transition: color 0.3s, transdform 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
-body {
+nav{
+    display: flex; /*muda a alinhamento dos objetos, ficam lado a lado*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /*espaco entre os elementos*/
     margin: 0;
-    background-color: #f9faff;
 }
 
-figure img {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
+nav ul li a {
+    text-decoration: none;
+    color: #333;
 }
 
-.header-right button:hover {
+.header-right a:hover {
     color: #ccc;
     transform: scale(1.1);
 }
@@ -51,28 +79,26 @@ figure img {
   	font-style: bold;
 }
 
-.intro {
-    width: 486px;
-    height: 621px;
-    gap: 12px;
-    margin-top: 54px;
-    margin-left: 120px;
-    padding: none;
+/* style do about */
+
+
+.about { 
+    max-width: 486px; /*max permite que o elemento sela 'maleavel' altere de tamanho em resoluceos de tela diferentes*/
+    /* margin-top: 54px;
+    margin-left: 120px; */
+    padding: 54px 120px 42px; /*1° top; 2° direita; 3° baixo*/
 }
 
-.intro h1 {
-    font-family: "Playfair Display", serif;
+.about h2 {
     font-optical-sizing: auto;
-    font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 64px;
-    line-height: 76.8px;
-    letter-spacing: 0%;
     margin-bottom: 32px;
-    margin-top: none;
+    color: #25282b;
+    margin-top: 0;
 }
 
-.intro_paragraph {
+.about p {
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -93,7 +119,7 @@ figure img {
     height: 43px;
 }
 
-.intro_contato h1{
+.intro_contato h3{
     font-size: 18px;
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
@@ -131,7 +157,7 @@ figure img {
     border-radius: 8px;
 }
 
-.intro_linkedin h1{
+.intro_linkedin h4{
     font-size: 18px;
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
@@ -147,7 +173,7 @@ figure img {
     padding-top: 20px; 
 }
 
-.projects h2 {
+.projects h5 {
     justify-content: center;
     display: flex;
     font-family: "Playfair Display", serif;
@@ -158,4 +184,3 @@ figure img {
     text-align: center;
     height: 27px;
 }
-
