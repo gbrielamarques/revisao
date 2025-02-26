@@ -100,87 +100,78 @@ nav ul li a {
 
 .about p {
     font-family: "Nunito", serif;
-    font-optical-sizing: auto;
+    line-height: 1.5;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0%;
     color: #828282;
+    margin-top: 32px;
 }
 
-.intro_button {
+.buttons {
     display: flex;
-    justify-content: flex-start;
-    
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    height: 43px;
+    gap: 10px;
 }
 
-.intro_contato h3{
-    font-size: 18px;
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-style: normal; 
+.primary {
+    background-color: #25282b;
     color: white;
-    font-weight: 500;
-    line-height: 27px;
-}
-
-.intro_contato {
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    background-color: #252828;
-    margin-right: 12px;
-    text-align: left;
-    border-radius: 10%;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    height: 42px;
     cursor: pointer;
-    padding: 8px 24px;
-    width: 116;
-    height: 43;
-    border-radius: 8px;
 }
 
-.intro_linkedin {
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-    width: 116;
-    height: 43;
-    border-radius: 8px;
-    padding: 8px 24px;
+.secondary {
     background-color: transparent;
-    border-color: #252828;
+    color: #25282b;
+    border: 2px solid #25282b;
     border-radius: 8px;
+    padding: 8px 24px;
+    height: 42px;
+    cursor: pointer;
 }
 
-.intro_linkedin h4{
-    font-size: 18px;
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-style: normal; 
-    color: #252828;
-    font-weight: 500;
-    line-height: 27px;
-}
-.projects {
-    margin-left: 222px;
-    margin-right: 226px;
-    margin-top: 42px; 
-    padding-top: 20px; 
+.primary:hover {
+    color: #ccc;
+    transform: rotate(18deg);
+    transition: transform 0.3s ease;;
 }
 
-.projects h5 {
-    justify-content: center;
-    display: flex;
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 72px;
-    letter-spacing: 0%;
-    text-align: center;
-    height: 27px;
+.secondary:hover {
+    color: #fff;
+    background-color: #25282b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.secondary:hover {
+    color: #fff;
+    transform: translate(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* styles section para projetos */
+
+.projects h3 {
+    display: inline-block;
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 88px;
+}
+
+.projects h3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50px);
+    width: 50%;
+    height: 2px;
+    background-color: black;
 }
