@@ -21,8 +21,8 @@ body {
     z-index: -1;
     height: 620px;
     right: 140px;
-    opacity: 0; /* Começa invisível */
-    transform: translateY(50px); /* Começa mais abaixo */
+    opacity: 0; /*item comeca inviisivel*/
+    transform: translateY(50px); 
     animation: fadeInUp 1s ease-out forwards, floating 3s ease-in-out infinite;
 }
 
@@ -50,7 +50,7 @@ header {
     color: #000000; /*referente ao texto*/
     border: none;
     border-radius: 5px;
-    cursor: pointer; /*indica com o mouse quando sobrepasa sobre o textto*/
+    cursor: pointer; /*indica com o mouse quando sobrepassa sobre o textto*/
     font-size: 18px;
     text-decoration: none;
     transition: color 0.3s, transform 0.3s;
