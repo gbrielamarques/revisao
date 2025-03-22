@@ -3,9 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@100;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100;500&display=swap');
 
-.root {
-    --color-light-background: #f9faff;
+:root {
     --color-light-gray: #ccc;
+    --color-paragraph: #828282;
+    --font-paragraph: "Nunito", serif;
 }
 
 body {
@@ -16,11 +17,17 @@ body {
 .figure1 img {
     position: absolute; 
     right: 0;
-    top: 0;
+    top: 58px;
     z-index: -1;
+    height: 620px;
+    right: 140px;
+    opacity: 0; /* Começa invisível */
+    transform: translateY(50px); /* Começa mais abaixo */
+    animation: fadeInUp 1s ease-out forwards, floating 3s ease-in-out infinite;
 }
 
 header {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +37,7 @@ header {
 
 .header-left h1 {
     font-family: "Comfortaa", serif;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 32px;
     color: var(--color-light-title);
     font-weight: bold;
@@ -69,7 +76,7 @@ nav ul li a {
 }
 
 .header-right a:hover {
-    color: #ccc;
+    color: var(--color-light-gray);
     transform: scale(1.1);
 }
 
@@ -82,12 +89,13 @@ nav ul li a {
 
 /* style do about */
 
-
 .about { 
     max-width: 486px; /*max permite que o elemento sela 'maleavel' altere de tamanho em resoluceos de tela diferentes*/
     /* margin-top: 54px;
     margin-left: 120px; */
     padding: 54px 120px 42px; /*1° top; 2° direita; 3° baixo*/
+    transform: translateY(20px); /* Começa ligeiramente abaixo */
+    animation: fadeInUp 1s ease-out forwards; /* Aparece com animação */
 }
 
 .about h2 {
@@ -100,20 +108,30 @@ nav ul li a {
 }
 
 .about p {
-    font-family: "Nunito", serif;
+    font-family: var(--font-paragraph);
     line-height: 1.5;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0%;
-    color: #828282;
+    color: var(--color-paragraph);
     margin-top: 32px;
 }
 
 .buttons {
     display: flex;
     gap: 10px;
+    align-items: center; 
+}
+
+.buttons a {
+    text-decoration: none;
+    font-family: "Comfortaa", serif;
+    display: inline-block;
+    padding: 12px 24px;    
+    transition: transform 0.3s ease; 
+    text-decoration: none;
 }
 
 .primary {
@@ -121,9 +139,13 @@ nav ul li a {
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 8px 24px;
-    height: 42px;
+    padding: 12px 24px; 
+    height: auto;
     cursor: pointer;
+    font-family: "Comfortaa", serif;
+    text-decoration: none;
+    font-size: 14px;
+
 }
 
 .secondary {
@@ -131,15 +153,18 @@ nav ul li a {
     color: #25282b;
     border: 2px solid #25282b;
     border-radius: 8px;
-    padding: 8px 24px;
-    height: 42px;
+    padding: 12px 24px; 
+    height: auto; 
     cursor: pointer;
+    font-family: "Comfortaa", serif;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .primary:hover {
-    color: #ccc;
+    color: var(--color-light-gray);
     transform: rotate(18deg);
-    transition: transform 0.3s ease;;
+    transition: transform 0.3s ease;
 }
 
 .secondary:hover {
@@ -147,7 +172,7 @@ nav ul li a {
     background-color: #25282b;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
 }
 
 .secondaryNOT:hover {
@@ -161,11 +186,15 @@ nav ul li a {
 .projects, 
 .contact {
     display: flex;
-    flex-direction: column; /*cada elemento fica em uma linha */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     gap: 80px;
     margin-bottom: 144px;
+}
+
+.contact {
+    margin-bottom: 64px;
 }
 
 .underline {
@@ -195,6 +224,14 @@ nav ul li a {
     height: 524px;
     border-radius: 24px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card-left {
@@ -215,8 +252,7 @@ nav ul li a {
     font-size: 18px;
     color: #828282;
     margin-bottom: 24px;
-
-    font-family: "Nunito", serif;
+    font-family: var(--font-paragraph);
     line-height: 1.5;
     font-style: normal;
     font-weight: 400;
@@ -281,6 +317,7 @@ gap: 24px;
     border: solid 1px #e8ecf4;
     height: 160px;
     line-height: 16px;
+    padding: 8px;
 }
 
 .form-contact .button{
@@ -288,14 +325,80 @@ gap: 24px;
     justify-content: flex-end;
 }
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
-footer .icons{
+.footer img {
+    width: 100%;
+}
+
+form .icons {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 0 0;
+}
+
+.icons img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.icons img:hover {
+    transform: scale(1.2); 
+}
+
+footer .footer {
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    margin: 0;
+}
+
+.last-info h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 16px;
+    font-family: "Nunito", serif;
+    font-size: 16px;
+    color: var(--color-paragraph);
+    font-weight: 400;
+}
+
+/* Animations */
+
+@keyframes floating {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
