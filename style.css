@@ -163,8 +163,8 @@ nav ul li a {
 
 .primary:hover {
     color: var(--color-light-gray);
-    transform: rotate(18deg);
-    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
 }
 
 .secondary:hover {
@@ -228,6 +228,7 @@ nav ul li a {
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
 
 .card.show {
     opacity: 1;
