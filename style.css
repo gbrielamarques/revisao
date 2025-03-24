@@ -203,19 +203,19 @@ nav ul li a {
     font-size: 36px; 
     font-weight: bold;
     margin-top: 0px;
-   margin-bottom: 16px;
-  }
+    margin-bottom: 16px;
+}
   
-  .underline h3::after {
+.underline::after {
     content: "";
     position: absolute;
-    bottom: -10px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 50%; 
-    height: 2px; 
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
     background-color: black;
-  }
+}
 
 .card {
     display: flex;
